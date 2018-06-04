@@ -1,5 +1,18 @@
 
 .carousel {
   margin: 0;
-  padding: 0
+  padding: 0;
+  height: 200px;
+}
+
+.carousel .carousel-item {
+  top: 10px;
+}
+
+.brand-logo{
+  margin-left: 5%;
+}
+
+.right li{
+  margin-right: 25%;
 }

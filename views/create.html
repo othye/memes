@@ -2,28 +2,28 @@
 {% extends "layouts/base.html" %}
 
 {% block css %}
-  {{ baseUrl('assets/css/create.css') }}
+{{ baseUrl('assets/css/create.css') }}
 {% endblock %}
 
 {% block content %}
 
 <div class="row">
-   <div class="col s12 m12">
-      <div class="carousel">
-        {% for base in data %}
-          <a class="carousel-item"><img src="{{ baseUrl('assets/bases/') }}{{ base.path }}.jpg"></a>
-        {% endfor %}
-      </div>
-
-        <canvas id="canvas" width="512" height="384">
-          <img src="{{ baseUrl('assets/bases/') }}grumpy.jpg" width="512" height="384" alt="">
-        </canvas>
+  <div class="col s12 m12">
+    <div class="carousel">
+      {% for base in data %}
+      <a class="carousel-item"><img src="{{ baseUrl('assets/bases/') }}{{ base.path }}.jpg"></a>
+      {% endfor %}
+    </div>
     
-   </div>
- </div>
+    <canvas id="canvas" width="512" height="384">
+      <img src="{{ baseUrl('assets/bases/') }}grumpy.jpg" width="512" height="384" alt="">
+    </canvas>
+    
+  </div>
+</div>
 
 {% endblock %}
 
 {% block js %}
-  {{ baseUrl('assets/js/create.js') }}
+{{ baseUrl('assets/js/create.js') }}
 {% endblock %}
