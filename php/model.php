@@ -1,13 +1,19 @@
 
 <?php
-function getBases($pdo){
-    $statement=$pdo->getInstance()->prepare('SELECT * from bases');
-    $statement->execute();
 
-    $data = $statement->fetchAll();
+function getBases($pdo): array {
 
-    return $data;
+  $statement = $pdo->getInstance()->prepare("SELECT * FROM bases");
+  $statement->execute();
+
+  $data = $statement->fetchAll();
+
+  // echo '<pre>';
+  // var_dump($data);
+  // echo '</pre>';
+
+  return $data;
+
 }
-
 
 ?>
