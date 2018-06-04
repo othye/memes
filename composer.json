@@ -1,0 +1,14 @@
+{
+    "name": "",
+    "description": "meme generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.4"
+    }
+}

@@ -1,0 +1,15 @@
+
+RewriteEngine On
+
+AddDefaultCharset UTF-8
+
+#compression
+AddOutputFilterByType DEFLATE text/text application/xml application/xhtml+xml text/html text/javascript text/css text/plain
+
+#ErrorDocument 404 404.php
+
+# if file/folder does not exist do below
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^create$ index.php?create=true [L]

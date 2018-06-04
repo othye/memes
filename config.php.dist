@@ -1,0 +1,19 @@
+
+<?php
+
+/**** **** **** **** **** **** **** ****
+Add your credentials
+&
+Rename file config.php
+**** **** **** **** **** **** **** ****/
+
+return $config = [
+
+  'host'      => '',
+  'database'  => '',
+  'user'      => '',
+  'password'  => ''
+
+];
+
+?>
