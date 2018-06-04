@@ -7,14 +7,15 @@
     <meta name="viewport" content="with=device-with, initial-scale=1">
     <link rel="icon" type="image/png" href="assets/favicon-acs.png">
     <link rel="stylesheet" type="text/css" href="{{ baseUrl('assets/css/lib/materialize.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{% block css %}{% endblock %}">
     <link rel="stylesheet" type="text/css" href="">
     <title>MeMeMeMe</title>
   </head>
   <body>
      {% include "partials/header.html" %}
-      <div class="container">
-        {% block content %}{% endblock %}
-      </div>
+     {% block content %}{% endblock %}
      {% include "partials/footer.html" %}
+     <script src="{{ baseUrl('assets/js/lib/materialize.min.js') }}"></script>
+     <script src="{% block js %}{% endblock %}"></script>
   </body>
 </html>

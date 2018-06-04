@@ -1,8 +1,16 @@
 
 {% extends "layouts/base.html" %}
 
+{% block css %}
+  {{ baseUrl('assets/css/listing.css') }}
+{% endblock %}
+
 {% block content %}
 
 <h2>Listing</h2>
 
+{% endblock %}
+
+{% block js %}
+  {{ baseUrl('assets/js/listing.js') }}
 {% endblock %}
