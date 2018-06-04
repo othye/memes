@@ -1,5 +1,13 @@
 
+.container {
+  width: 85%
+}
+
 .carousel {
-  margin: 0;
-  padding: 0
+  height: 200px;
+  margin-top: 35px
+}
+
+canvas {
+  width: 512px
 }

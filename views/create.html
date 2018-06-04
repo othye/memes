@@ -15,10 +15,35 @@
         {% endfor %}
       </div>
 
-        <canvas id="canvas" width="512" height="384">
-          <img src="{{ baseUrl('assets/bases/') }}grumpy.jpg" width="512" height="384" alt="">
-        </canvas>
-    
+      <div class="left col s12 m6 l6">
+        <canvas id="canvas" width="1024" height="768"></canvas>
+      </div>
+      <div class="right col s12 m6 l6">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name2" type="text" class="validate">
+            <label class="active" for="first_name2">Texte du haut</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="Placeholder" id="first_name" type="color" class="validate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name2" type="text" class="validate">
+            <label class="active" for="first_name2">Texte du bas</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="Placeholder" id="first_name" type="color" class="validate">
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Générer MeMeMeMe</button>
+      </div>
+
    </div>
  </div>
 
