@@ -29,7 +29,7 @@ body{
   text-align: center;
   font-family: 'monospace';
   font-size: 1.5rem;
-  background: yellow
+  background: yellow;
 }
 
 #p-up-text {
@@ -40,8 +40,48 @@ body{
   bottom: 2%
 }
 
-@media only screen and (max-width: 600px) {
-  canvas {
-      width: 250px;
-  }
+input[type="color"]{
+  background: none;
+  border: none;
+}
+.input-flex{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-field > label{
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px)
+}
+
+.input-field > .label-color{
+  position: relative;
+  margin-right: 5%;
+  left: 0;
+}
+
+.input-field.col label{
+  left: 0;
+}
+
+form{
+  margin-top: 5%;
+}
+
+form > .row {
+  margin-bottom: 0;
+}
+
+.btn{
+  margin-top: 2%;
+}
+
+
+.row .col{
+  padding: 0
+}
+
+.nav-wrapper > ul > li > a{
+  font-size: 20px;
 }
