@@ -1,6 +1,88 @@
 
+const   inputUpText   = document.querySelector('#input-up-text')
+      , inputDownText = document.querySelector('#input-down-text')
+      , pUpText       = document.querySelector('#p-up-text')
+      , pDownText     = document.querySelector('#p-down-text')
+      , upTextColor   = document.querySelector('#up-text-color')
+      , upBgColor     = document.querySelector('#up-bg-color')
+      , downTextColor = document.querySelector('#down-text-color')
+      , downBgColor   = document.querySelector('#down-bg-color')
+
 /**** **** **** **** **** **** **** ****
  > EVENTS
+**** **** **** **** **** **** **** ****/
+
+const eventCarousel = () => {
+
+  const items = document.querySelectorAll('.carousel-item')
+
+  items.forEach(item => {
+
+    item.addEventListener('click', () => {
+
+      const path = item.childNodes[0].getAttribute('src')
+
+      document.querySelector('#user-choice').setAttribute('src', path)
+
+      const step = path.split('/', path)
+
+      console.log(step);
+
+      // document.querySelector('#input-image').setAttribute('value', item.childNodes[0].getAttribute('src'))
+
+    })
+
+  });
+
+}
+
+const eventForm = () => {
+
+  inputUpText.addEventListener('keypress', eventUpText, false)
+  inputDownText.addEventListener('keypress', eventDownText, false)
+
+}
+
+const eventUpText = e => {
+
+  const keyCode = e.keyCode
+
+  if (keyCode !== 8) {
+
+    pUpText.innerHTML = inputUpText.value
+
+
+  } else {
+
+    pUpText.innerHTML = pUpText.innerHTML.slice(0, -1)
+
+  }
+
+  pUpText.style.color      = upTextColor.value
+  pUpText.style.background = upBgColor.value
+
+}
+
+const eventDownText = e => {
+
+  const keyCode = e.keyCode
+
+  if (keyCode !== 8) {
+
+    pDownText.innerHTML = inputDownText.value
+
+  } else {
+
+    pDownText.innerHTML = pDownText.innerHTML.slice(0, -1)
+
+  }
+
+  pDownText.style.color = downTextColor.value
+
+}
+
+/**** **** **** **** **** **** **** ****
+ > FUNCTIONS
 **** **** **** **** **** **** **** ****/
 
 const getCarousel = () => {
@@ -16,88 +98,18 @@ const getCarousel = () => {
 
 }
 
-const checkClickCarousel = () => {
+const getBgColor = el => {
 
-  const items = document.querySelectorAll('.carousel-item')
 
-  items.forEach(item => {
-
-    item.addEventListener('click', () => {
-
-      document.querySelector('#user-choice').setAttribute('src', item.childNodes[0].getAttribute('src'))
-
-    })
-
-  });
 
 }
 
-const checkForm = () => {
+const getTextColor = el => {
 
-  const   upText   = document.querySelector('#up-text')
-        , downText = document.querySelector('#down-text')
 
-  upText.addEventListener('keypress', e => {
-
-    const keyCode = e.keyCode
-
-    let pUpText = document.querySelector('#p-up-text')
-
-    console.log(keyCode);
-
-    if (keyCode !== 8) {
-
-      // let   textColor   = document.querySelector('#up-text-color').value
-      //     , borderColor = document.querySelector('#up-border-color').value
-
-      pUpText.innerHTML = upText.value
-
-    } else {
-
-      pUpText.innerHTML = pUpText.innerHTML.slice(0, -1)
-
-    }
-
-  })
-
-  downText.addEventListener('keypress', e => {
-
-    const keyCode = e.keyCode
-
-    let pDownText = document.querySelector('#p-down-text')
-
-    console.log(keyCode);
-
-    if (keyCode !== 8) {
-
-      // let   textColor   = document.querySelector('#up-text-color').value
-      //     , borderColor = document.querySelector('#up-border-color').value
-
-      pDownText.innerHTML = downText.value
-
-    } else {
-
-      pDownText.innerHTML = pDownText.innerHTML.slice(0, -1)
-
-    }
-
-  })
 
 }
 
-/**** **** **** **** **** **** **** ****
- > FUNCTIONS
-**** **** **** **** **** **** **** ****/
-
-const loadCanvas = path => {
-
-  const img = new Image()
-
-  img.onload = () => context.drawImage(img, 0, 0)
-
-  img.src = path
-
-}
 
 /**** **** **** **** **** **** **** ****
  > INIT
@@ -106,7 +118,7 @@ const loadCanvas = path => {
 const init = function() {
 
   getCarousel()
-  checkClickCarousel()
-  checkForm()
+  eventCarousel()
+  eventForm()
 
 }()

@@ -2,5 +2,4 @@
 config.php
 composer.lock
 vendor/
-assets/images/
 uploads/
