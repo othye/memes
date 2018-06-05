@@ -1,7 +1,7 @@
 
 <?php
 
-require 'model.php';
+require 'models/CreateModel.php';
 
 function ctrlCreate($twig, $pdo) {
 

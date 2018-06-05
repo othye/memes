@@ -1,51 +1,112 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  
+/**** **** **** **** **** **** **** ****
+ > EVENTS
+**** **** **** **** **** **** **** ****/
+
+const getCarousel = () => {
+
   const   elems     = document.querySelectorAll('.carousel')
-  , options   = {
-    
-    dist: 0
-    , numVisible: 8
-    
-  }
-  , instances = M.Carousel.init(elems, options)
-  
-})
+        , options   = {
 
-const canvas = document.getElementById('canvas')
+             dist: 0
+           , numVisible: 8
 
-if (canvas.getContext) {
-  
+         }
+       , instances = M.Carousel.init(elems, options)
+
+}
+
+const checkClickCarousel = () => {
+
   const items = document.querySelectorAll('.carousel-item')
-  
-  items.forEach(function(item) {
-    
+
+  items.forEach(item => {
+
     item.addEventListener('click', () => {
-      
-      let src = item.childNodes[0].getAttribute('src')
-      
-      var context = canvas.getContext('2d');
-      var imageObj = new Image();
-      
-      imageObj.onload = function() {
-        context.drawImage(imageObj, 0, 0);
-      };
-      imageObj.src = src;
-      
+
+      document.querySelector('#user-choice').setAttribute('src', item.childNodes[0].getAttribute('src'))
+
     })
     
   });
-  
-  var context = canvas.getContext('2d');
-  var imageObj = new Image();
-  
-  imageObj.onload = function() {
-    context.drawImage(imageObj, 0, 0);
-  };
-  imageObj.src = 'assets/bases/create.jpg';
-  
-} else {
-  
-  console.log(`No Canvas Context`)
-  
+
 }
+
+const checkForm = () => {
+
+  const   upText   = document.querySelector('#up-text')
+        , downText = document.querySelector('#down-text')
+
+  upText.addEventListener('keypress', e => {
+
+    const keyCode = e.keyCode
+
+    let pUpText = document.querySelector('#p-up-text')
+
+    console.log(keyCode);
+
+    if (keyCode !== 8) {
+
+      // let   textColor   = document.querySelector('#up-text-color').value
+      //     , borderColor = document.querySelector('#up-border-color').value
+
+      pUpText.innerHTML = upText.value
+
+    } else {
+
+      pUpText.innerHTML = pUpText.innerHTML.slice(0, -1)
+
+    }
+
+  })
+
+  downText.addEventListener('keypress', e => {
+
+    const keyCode = e.keyCode
+
+    let pDownText = document.querySelector('#p-down-text')
+
+    console.log(keyCode);
+
+    if (keyCode !== 8) {
+
+      // let   textColor   = document.querySelector('#up-text-color').value
+      //     , borderColor = document.querySelector('#up-border-color').value
+
+      pDownText.innerHTML = downText.value
+
+    } else {
+
+      pDownText.innerHTML = pDownText.innerHTML.slice(0, -1)
+
+    }
+
+  })
+
+}
+
+/**** **** **** **** **** **** **** ****
+ > FUNCTIONS
+**** **** **** **** **** **** **** ****/
+
+const loadCanvas = path => {
+
+  const img = new Image()
+
+  img.onload = () => context.drawImage(img, 0, 0)
+
+  img.src = path
+
+}
+
+/**** **** **** **** **** **** **** ****
+ > INIT
+**** **** **** **** **** **** **** ****/
+
+const init = function() {
+
+  getCarousel()
+  checkClickCarousel()
+  checkForm()
+
+}()

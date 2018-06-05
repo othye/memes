@@ -12,8 +12,32 @@ body{
   margin-top: 35px
 }
 
-canvas {
-  width: 512px
+.user-choice {
+  position: relative;
+  width: 512px;
+  height: 384px
+}
+
+.user-choice > img {
+  width: 512px;
+  height: 384px
+}
+
+#p-up-text, #p-down-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-family: 'monospace';
+  font-size: 1.5rem;
+  background: yellow
+}
+
+#p-up-text {
+  top: 2%
+}
+
+#p-down-text {
+  bottom: 2%
 }
 
 @media only screen and (max-width: 600px) {
