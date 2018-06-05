@@ -31,7 +31,7 @@ const eventCarousel = () => {
       // document.querySelector('#input-image').setAttribute('value', item.childNodes[0].getAttribute('src'))
 
     })
-
+    
   });
 
 }
@@ -122,3 +122,8 @@ const init = function() {
   eventForm()
 
 }()
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});

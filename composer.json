@@ -1,11 +1,11 @@
 {
-    "name": "",
+    "name": "pierre",
     "description": "meme generator",
     "license": "MIT",
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "pierre",
+            "email": "pierreh@codeur.online"
         }
     ],
     "require": {
