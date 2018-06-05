@@ -1,8 +1,8 @@
 <?php
 
 require_once './vendor/autoload.php';
-require './php/controller.php';
-require './php/pdo.php';
+require './config/pdo.php';
+require './controllers/CreateController.php';
 
 $loader = new Twig_Loader_Filesystem('./views');
 
