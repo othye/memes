@@ -16,7 +16,7 @@ const   inputUpText   = document.querySelector('#input-up-text')
       , downSizeText  = document.querySelector('#down-size-text')
 
 /**** **** **** **** **** **** **** ****
- > EVENTS
+  > EVENTS
 **** **** **** **** **** **** **** ****/
 
 const eventCarousel = () => {
@@ -98,13 +98,13 @@ const eventDownColor = () => {
 
 const eventUpSize = () => {
 
-  pUpText.style.fontSize = upSizeText.value
+  pUpText.style.fontSize = upSizeText.value + 'px'
 
 }
 
 const eventDownSize = () => {
 
-  pDownText.style.fontSize = downSizeText.value
+  pDownText.style.fontSize = downSizeText.value + 'px'
 
 }
 
@@ -133,7 +133,7 @@ const eventSubmit = () => {
 }
 
 /**** **** **** **** **** **** **** ****
- > FUNCTIONS
+  > FUNCTIONS
 **** **** **** **** **** **** **** ****/
 
 const getCarousel = () => {
@@ -141,11 +141,11 @@ const getCarousel = () => {
   const   elems     = document.querySelectorAll('.carousel')
         , options   = {
 
-             dist: 0
-           , numVisible: 8
+            dist: 0
+          , numVisible: 8
 
-         }
-       , instances = M.Carousel.init(elems, options)
+        }
+      , instances = M.Carousel.init(elems, options)
 
 }
 
