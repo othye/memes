@@ -98,13 +98,13 @@ const eventDownColor = () => {
 
 const eventUpSize = () => {
 
-  pUpText.style.fontSize = upSizeText.value + 'px'
+  pUpText.style.fontSize = `${upSizeText.value}px`
 
 }
 
 const eventDownSize = () => {
 
-  pDownText.style.fontSize = downSizeText.value + 'px'
+  pDownText.style.fontSize = `${downSizeText.value}px`
 
 }
 
