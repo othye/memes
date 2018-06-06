@@ -1,35 +1,36 @@
 <?php
 
-require_once './vendor/autoload.php';
-require './controlers/controller.php';
-require './config/pdo.php';
+  require_once './vendor/autoload.php';
+  require './controlers/controller.php';
+  require './config/pdo.php';
 
-$loader = new Twig_Loader_Filesystem('./views');
+  $loader = new Twig_Loader_Filesystem('./views');
 
-$twig = new Twig_Environment($loader, [
-  'cache' => false
-]);
+  $twig = new Twig_Environment($loader, [
+    'cache' => false
+  ]);
 
-$twig->addFunction(new \Twig_SimpleFunction('baseUrl', function ($url) {
+  $twig->addFunction(new \Twig_SimpleFunction('baseUrl', function ($url) {
 
   $rootUrl = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].str_replace('index.php', '', $_SERVER['SCRIPT_NAME']);
 
-  return $rootUrl.$url;
+    return $rootUrl.$url;
 
-}));
+  }));
 
-$pdo = new Database();
+  $pdo = new Database();
 
-switch (true) {
+  switch (true) {
 
-  case !empty($_GET['create']):
-    return ctrlCreate($twig, $pdo);
+    case !empty($_GET['create']):
+      return ctrlCreate($twig, $pdo);
     break;
 
-  default:
-    return ctrlListing($twig, $pdo);
+    default:
+      return ctrlListing($twig, $pdo);
     break;
 
-}
+  }
 
 ?>
+  

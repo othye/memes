@@ -1,75 +1,107 @@
 {% extends "layouts/base.html" %}
 
 {% block css %}
-  {{ baseUrl('assets/css/create.css') }}
+{{ baseUrl('assets/css/create.css') }}
 {% endblock %}
 
 {% block content %}
 
 <div class="row">
-   <div class="col s12 m12">
-
-     <!-- CAROUSEL -->
-      <div class="carousel">
-        {% for base in data %}
-          <a class="carousel-item"><img src="{{ baseUrl('assets/images/') }}{{ base.path }}.jpg"></a>
-        {% endfor %}
-      </div>
-
-      <!-- USER CHOICE -->
-        <form action="memcreator.php" method="post">
-            <div class="left col s12 m6 l6">
-                <div class="user-choice">
-                <img name="image" id="user-choice" src="{{ baseUrl('assets/images/') }}grumpy.jpg">
-                <input id="input-image" type="hidden" name="image" value="{{ baseUrl('assets/images/') }}grumpy.jpg">
-                <p id="p-up-text"></p>
-                <p id="p-down-text"></p>
+    <div class="col s12 m12">
+        
+        <!-- CAROUSEL -->
+        <div class="carousel">
+            {% for base in data %}
+            <a class="carousel-item"><img src="{{ baseUrl('assets/images/') }}{{ base.path }}.jpg"></a>
+            {% endfor %}
+        </div>
+        
+        <form action="memcreator.php" method="post"  >  
+            <div class="left col s12 m12 l3">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="up-text" type="text" name="texteH" class="validate">
+                        <label for="up-text">Texte du haut</label>
+                    </div>
+                    
+                    <div>
+                        <div class="input-flex input-field col s12">
+                            <label class="label-color" for="up-text-color">Couleur</label>
+                            <input id="up-text-color" name="colorH" type="color" value="#ffffff">
+                            
+                        </div>
+                        
+                        <div class="input-field col s12">
+                            <label class="label-color" >Taille du texte</label>
+                            <select name="sizeH">
+                                <option value="22" disabled >Taille du texte</option>
+                                <option value="24" selected>24px</option>
+                                <option value="28">28px</option>
+                                <option value="32">32px</option>
+                                <option value="36">36px</option>
+                                <option value="40">40px</option>
+                                <option value="44">44px</option>
+                                <option value="48">48px</option>
+                                <option value="50">50px</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            <!-- USER CHOICE -->
+            <center>
+                <div class="col s12 m12 l6">
+                    <div class="user-choice">
+                        <img id="user-choice" src="{{ baseUrl('assets/images/') }}create.jpg">
+                        <input id="input-image" type="hidden" name="image" value="{{ baseUrl('assets/images/') }}create.jpg">
+                        <p id="p-up-text"></p>
+                        <p id="p-down-text"></p>
+                    </div>
+                </div>
+            </center>
             <!-- FORM -->
-            <div class="right col s12 m6 l6">
-                <div class="row">
-                <div class="input-field col s6">
-                    <input name="texteHaut" id="up-text" type="text" class="validate">
-                    <label for="up-text">Texte du haut</label>
+            <div class="right col s12 m12 l3">
+                <div class="row ">
+                    <div class="input-field col s12">
+                        <input id="down-text" type="text" name="texteB" class="validate">
+                        <label for="down-text">Texte du bas</label>
+                    </div>
+                    
+                    <div>
+                        <div class="input-flex input-field col s12">
+                            <label class="label-color" for="down-text-color">Couleur</label>
+                            <input id="down-text-color" type="color" name="colorB" value="#ffffff">
+                            
+                        </div>
+                        
+                        <div class="input-field col s12">
+                            <label class="label-color" >Taille du texte</label>
+                            <select name="sizeB">
+                                <option  disabled >Taille du texte</option>
+                                <option value="24" selected>24px</option>
+                                <option value="28">28px</option>
+                                <option value="32">32px</option>
+                                <option value="36">36px</option>
+                                <option value="40">40px</option>
+                                <option value="44">44px</option>
+                                <option value="48">48px</option>
+                                <option value="50">50px</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s6">
-                    <label for="up-text-color">Couleur Texte</label>
-                    <input name="colorH" id="up-text-color" type="color">
-                </div>
-                <div class="input-field col s6">
-                    <input id="up-border-color" type="color">
-                    <label for="up-border-color">Couleur Bordure</label>
-                </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s6">
-                    <input name="texteBas" id="down-text" type="text" class="validate">
-                    <label for="down-text">Texte du bas</label>
-                </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s6">
-                    <input id="down-color-bg" type="color">
-                    <label for="down-color-bg">Background</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="down-color-fg" type="color">
-                    <label for="down-color-fg">Foreground</label>
-                </div>
-                </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Générer MeMeMeMe</button>
             </div>
-        </form>
+                
+            
+            <div class="col s12"><center><button class="btn waves-effect waves-light purple darken-4" type="submit" name="action" >Générer MeMeMeMe</button></center></div>
 
-   </div>
- </div>
+            
+        </form>
+    </div>
+</div>
 
 {% endblock %}
 
 {% block js %}
-  {{ baseUrl('assets/js/create.js') }}
+{{ baseUrl('assets/js/create.js') }}
 {% endblock %}
