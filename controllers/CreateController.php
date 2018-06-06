@@ -9,10 +9,4 @@ function ctrlCreate($twig, $pdo) {
 
 }
 
-function ctrlListing($twig, $pdo) {
-
-  echo $twig->render('listing.html');
-
-}
-
 ?>

@@ -7,6 +7,8 @@
 
 {% block content %}
 
+<div id="modal" class="modal"></div>
+
 <div class="row">
   <div class="col s12 m12">
 
@@ -17,65 +19,80 @@
       {% endfor %}
     </div>
 
-     <!-- CAROUSEL -->
-      <div class="carousel">
-        {% for base in data %}
-          <a class="carousel-item"><img src="{{ baseUrl('assets/images/') }}{{ base.path }}.jpg"></a>
-        {% endfor %}
-      </div>
-
-      <!-- USER CHOICE -->
-      <div class="left col s12 m6 l6">
-        <div class="user-choice">
-          <img id="user-choice" src="{{ baseUrl('assets/images/') }}create.jpg">
-          <p id="p-up-text"></p>
-          <p id="p-down-text"></p>
-          <input id="input-image" type="hidden" name="image" value="create">
-        </div>
-      </div>
-
-      <!-- FORM -->
-      <div class="right col s12 m6 l6">
+    <form>
+      <div class="left col s12 m12 l3">
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s12">
             <input id="input-up-text" type="text" class="validate">
             <label for="input-up-text">Texte du haut</label>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <label for="up-text-color">Couleur Texte</label>
-            <input id="up-text-color" type="color" value="#ffffff">
+          <div>
+            <div class="input-flex input-field col s12">
+              <label class="label-color" for="up-text-color">Couleur</label>
+              <input id="up-text-color" type="color" value="#ffffff">
+            </div>
+            <div class="input-field col s12">
+              <select id="up-size-text">
+                <option value="" disabled selected>Taille du texte</option>
+                <option>24px</option>
+                <option>28px</option>
+                <option>32px</option>
+                <option>36px</option>
+                <option>40px</option>
+                <option>44px</option>
+              </select>
+            </div>
           </div>
-          <div class="input-field col s6">
-            <input id="up-bg-color" type="color" colorformat="rgba" value="rgba(255, 255, 255, 0)">
-            <label for="up-bg-color">Couleur Fond</label>
+        </div>
+      </div>
+
+      <!-- USER CHOICE -->
+      <center>
+        <div class="col s12 m12 l6">
+          <div class="user-choice">
+            <img id="user-choice" src="{{ baseUrl('assets/images/') }}create.jpg">
+            <p id="p-up-text"></p>
+            <p id="p-down-text"></p>
           </div>
         </div>
+      </center>
+
+      <div class="right col s12 m12 l3">
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s12">
             <input id="input-down-text" type="text" class="validate">
             <label for="input-down-text">Texte du bas</label>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="down-text-color" type="color" value="#ffffff">
-            <label for="down-text-color">Couleur Texte</label>
+          <div>
+            <div class="input-flex input-field col s12">
+              <label class="label-color" for="down-text-color">Couleur</label>
+              <input id="down-text-color" type="color" value="#ffffff">
+            </div>
+            <div class="input-field col s12">
+              <select id="down-size-text">
+                <option value="" disabled selected>Taille du texte</option>
+                <option>24px</option>
+                <option>28px</option>
+                <option>32px</option>
+                <option>36px</option>
+                <option>40px</option>
+                <option>44px</option>
+              </select>
+            </div>
           </div>
-          <div class="input-field col s6">
-            <input id="down-bg-color" type="color">
-            <label for="down-bg-color">Couleur Fond</label>
-          </div>
-
         </div>
       </div>
-    </div></form>
+
+      <div class="col s12">
+        <center>
+          <button data-target="modal" class="btn modal-trigger waves-effect waves-light purple darken-4">
+            Générer MeMeMeMe
+          </button>
+        </center>
+      </div>
+    </form>
 
   </div>
-
-  <center><button class="btn waves-effect waves-light purple darken-4" type="submit" name="action">Générer MeMeMeMe</button></center>
-</div>
 </div>
 
 {% endblock %}

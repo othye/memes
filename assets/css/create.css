@@ -1,7 +1,7 @@
-body{
-  background: #eeeeee;
-}
 
+body{
+  background: #eee;
+}
 
 .container {
   width: 85%
@@ -24,12 +24,15 @@ body{
 }
 
 #p-up-text, #p-down-text {
+  overflow-y: hidden;
+  overflow-wrap: break-word;
   position: absolute;
   width: 100%;
+  max-height: 100px;
+  margin: 0;
+  padding: 0 32px;
   text-align: center;
-  font-family: 'monospace';
   font-size: 1.5rem;
-  background: yellow;
 }
 
 #p-up-text {
@@ -40,48 +43,44 @@ body{
   bottom: 2%
 }
 
-input[type="color"]{
+input[type="color"] {
   background: none;
   border: none;
 }
-.input-flex{
+
+.input-flex {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.input-field > label{
+.input-field > label {
   -webkit-transform: translateY(0px);
   transform: translateY(0px)
 }
 
-.input-field > .label-color{
+.input-field > .label-color {
   position: relative;
   margin-right: 5%;
   left: 0;
 }
 
-.input-field.col label{
+.input-field.col label {
   left: 0;
-}
-
-form{
-  margin-top: 5%;
 }
 
 form > .row {
   margin-bottom: 0;
 }
 
-.btn{
+.btn {
   margin-top: 2%;
 }
 
-
-.row .col{
+.row .col {
   padding: 0
 }
 
-.nav-wrapper > ul > li > a{
+.nav-wrapper > ul > li > a {
   font-size: 20px;
 }

@@ -3,6 +3,8 @@
 require_once './vendor/autoload.php';
 require './config/pdo.php';
 require './controllers/CreateController.php';
+require './controllers/GenerateController.php';
+require './controllers/ListingController.php';
 
 $loader = new Twig_Loader_Filesystem('./views');
 
@@ -21,6 +23,10 @@ $twig->addFunction(new \Twig_SimpleFunction('baseUrl', function ($url) {
 $pdo = new Database();
 
 switch (true) {
+
+  case !empty($_POST):
+    return ctrlGenerate($twig, $pdo, $_POST);
+    break;
 
   case !empty($_GET['create']):
     return ctrlCreate($twig, $pdo);
