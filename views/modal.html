@@ -1,8 +1,21 @@
-
-<div class="modal-content">
-  <img width="250px" src="{{ baseUrl('')}}{{ memememe }}.jpg">
-  <a href="{{ baseUrl('')}}{{ memememe }}.jpg">{{ baseUrl('')}}{{ memememe }}.jpg</a>
+<div class="center modal-content">
+  <img class="modal-image" src="{{ baseUrl('uploads/')}}{{ memememe }}.jpg">
+  <p>Lien de l'image</p>
+  <a href="{{ baseUrl('media/')}}{{ memememe }}.jpg" target="_blank">{{ baseUrl('media/')}}{{ memememe }}.jpg</a>
+  <!-- <div class="input-field col s12">
+    <textarea id="textarea1" class="materialize-textarea" value="{{ baseUrl('media/')}}{{ memememe }}.jpg"></textarea>
+    <label for="textarea1">Lien de l'image</label>
+  </div> -->
 </div>
+
 <div class="modal-footer">
-  <h5>Ici les boutons de partage réseaux sociaux</h5>
+    <div class="center">
+      <p>Share on</p>
+      <a class="mt-facebook mt-share-inline-square-bw-sm" href="https://www.facebook.com/sharer/sharer.php?u=LINK">
+        <img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png">
+      </a>
+      <a class="mt-twitter mt-share-inline-square-bw-sm" href="http://twitter.com/intent/tweet?text=&amp;url=LINK">
+        <img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png">
+      </a>
+    </div>
 </div>

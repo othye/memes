@@ -1,3 +1,7 @@
 .nav-wrapper > ul > li > a{
     font-size: 20px;
 }
+
+.container {
+    width: 85%
+}
