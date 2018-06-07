@@ -6,6 +6,8 @@
 
 {% block content %}
 
+<div id="modal" class="modal"></div>
+
 <div class="row">
     <div class="col s12 m12">
         
@@ -16,7 +18,7 @@
             {% endfor %}
         </div>
         
-        <form action="memcreator.php" method="post"  >  
+        <form>  
             <div class="left col s12 m12 l3">
                 <div class="row">
                     <div class="input-field col s12">
@@ -33,7 +35,7 @@
                         
                         <div class="input-field col s12">
                             <label class="label-color" >Taille du texte</label>
-                            <select name="sizeH">
+                            <select id="up-size-text" name="sizeH">
                                 <option value="22" disabled >Taille du texte</option>
                                 <option value="24" selected>24px</option>
                                 <option value="28">28px</option>
@@ -76,7 +78,7 @@
                         
                         <div class="input-field col s12">
                             <label class="label-color" >Taille du texte</label>
-                            <select name="sizeB">
+                            <select id="down-size-text" name="sizeB">
                                 <option  disabled >Taille du texte</option>
                                 <option value="24" selected>24px</option>
                                 <option value="28">28px</option>
@@ -93,7 +95,7 @@
             </div>
                 
             
-            <div class="col s12"><center><button class="btn waves-effect waves-light purple darken-4" type="submit" name="action" >Générer MeMeMeMe</button></center></div>
+            <div class="col s12"><center> <button data-target="modal" class="btn modal-trigger waves-effect waves-light purple darken-4">Générer MeMeMeMe</button></center></div>
 
             
         </form>

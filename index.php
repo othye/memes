@@ -20,17 +20,21 @@
 
   $pdo = new Database();
 
-  switch (true) {
+  
+switch (true) {
+  case !empty($_POST):
+    return ctrlGenerate($twig, $pdo, $_POST);
+  break;
 
-    case !empty($_GET['create']):
-      return ctrlCreate($twig, $pdo);
-    break;
+  case !empty($_GET['create']):
+    return ctrlCreate($twig, $pdo);
+  break;
 
-    default:
-      return ctrlListing($twig, $pdo);
-    break;
+  default:
+    return ctrlListing($twig, $pdo);
+  break;
 
-  }
+}
 
 ?>
   

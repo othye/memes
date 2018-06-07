@@ -7,7 +7,11 @@
 
 {% block content %}
 
-<h2>Listing</h2>
+<lu class="list">
+  {% for data in listing %}
+  <li class="list-item"><img src="{{ baseUrl('uploads/') }}{{ data.path }}.jpg"></li>
+  {% endfor %}
+</div>
 
 {% endblock %}
 

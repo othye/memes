@@ -1,3 +1,7 @@
-.nav-wrapper > ul > li > a{
+.nav-wrapper > ul > li > img{
     font-size: 20px;
+}
+
+#logo{
+    width: 100px;
 }
