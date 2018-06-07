@@ -12,5 +12,5 @@ AddOutputFilterByType DEFLATE text/text application/xml application/xhtml+xml te
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-#RewriteRule ^(.*).jpg$ uploads/$1 [L]
+RewriteRule ^media/(.*)$ uploads/$1 [L]
 RewriteRule ^create$ index.php?create=true [L]
