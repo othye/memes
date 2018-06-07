@@ -42,9 +42,13 @@ function ctrlGenerate($twig, $pdo, $posted) {
 
   });
 
-  $memememe->save('uploads/'.$image.'.jpg');
+  $step = $image.'_';
 
-  echo $twig->render('modal.html', ['memememe' => $image]);
+  $uniqueId = uniqid($step);
+
+  $memememe->save('uploads/'.$uniqueId.'.jpg');
+
+  echo $twig->render('modal.html', ['memememe' => saveMeme($pdo, $image, $uniqueId)]);
 
 }
 
