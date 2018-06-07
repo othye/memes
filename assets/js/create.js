@@ -55,7 +55,6 @@ const eventUpText = e => {
   if (keyCode !== 8) {
 
     pUpText.innerHTML = inputUpText.value
-
   } else {
 
     setTimeout(() => pUpText.innerHTML = inputUpText.value, 25)
@@ -73,7 +72,6 @@ const eventDownText = e => {
   if (keyCode !== 8) {
 
     pDownText.innerHTML = inputDownText.value
-
   } else {
 
     setTimeout(() => pDownText.innerHTML = inputDownText.value, 25)

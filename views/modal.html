@@ -1,8 +1,16 @@
-
-<div class="modal-content">
-  <img width="250px" src="{{ baseUrl('uploads/')}}{{ memememe }}.jpg">
-  <h4>Ici le lien de partage de l'image</h4>
+<div class="center modal-content">
+  <img class="modal-image" src="{{ baseUrl('uploads/')}}{{ memememe }}.jpg">
+  <a href="{{ baseUrl('uploads/')}}{{ memememe }}.jpg">{{ baseUrl('uploads/')}}{{ memememe }}.jpg"</a>
 </div>
+
 <div class="modal-footer">
-  <h5>Ici les boutons de partage réseaux sociaux</h5>
+    <div class="center"> 
+      <p>Share on</p>
+      <a class="mt-facebook mt-share-inline-square-bw-sm" href="https://www.facebook.com/sharer/sharer.php?u=LINK">
+        <img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png">
+      </a>
+      <a class="mt-twitter mt-share-inline-square-bw-sm" href="http://twitter.com/intent/tweet?text=&amp;url=LINK">
+        <img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png">
+      </a> 
+    </div>
 </div>

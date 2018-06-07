@@ -2,10 +2,10 @@
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost
--- Généré le :  Lun 04 Juin 2018 à 09:56
--- Version du serveur :  5.7.21-0ubuntu0.16.04.1
--- Version de PHP :  7.0.28-0ubuntu0.16.04.1
+-- Host: localhost
+-- Generation Time: Jun 06, 2018 at 04:52 PM
+-- Server version: 5.7.22-0ubuntu0.16.04.1
+-- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `memes`
+-- Database: `memes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bases`
+-- Table structure for table `bases`
 --
 
 CREATE TABLE `bases` (
@@ -31,56 +31,73 @@ CREATE TABLE `bases` (
   `path` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `bases`
+--
+
+INSERT INTO `bases` (`id`, `path`) VALUES
+(1, 'depardieu'),
+(2, 'grumpy'),
+(3, 'macron'),
+(4, 'mark-zuckerberg'),
+(5, 'minions'),
+(6, 'pepe-the-frog'),
+(7, 'putin-and-trump'),
+(8, 'salt-bae'),
+(9, 'shia-labeouf'),
+(10, 'sponge-bob'),
+(11, 'monkey');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `memes`
+-- Table structure for table `memes`
 --
 
 CREATE TABLE `memes` (
   `id` int(11) NOT NULL,
   `path` varchar(255) NOT NULL,
   `base_id` int(11) NOT NULL,
-  `date` datetime DEFAULT NULL
+  `date` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `bases`
+-- Indexes for table `bases`
 --
 ALTER TABLE `bases`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `memes`
+-- Indexes for table `memes`
 --
 ALTER TABLE `memes`
   ADD PRIMARY KEY (`id`,`base_id`),
   ADD KEY `fk_memes_base_idx` (`base_id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `bases`
+-- AUTO_INCREMENT for table `bases`
 --
 ALTER TABLE `bases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT pour la table `memes`
+-- AUTO_INCREMENT for table `memes`
 --
 ALTER TABLE `memes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour les tables exportées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `memes`
+-- Constraints for table `memes`
 --
 ALTER TABLE `memes`
   ADD CONSTRAINT `fk_memes_base` FOREIGN KEY (`base_id`) REFERENCES `bases` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
