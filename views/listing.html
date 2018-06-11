@@ -1,0 +1,27 @@
+
+{% extends "layouts/base.html" %}
+
+{% block css %}
+  {{ baseUrl('assets/css/listing.css') }}
+{% endblock %}
+
+{% block content %}
+<div >
+  <p>Un mème, c'est une idée, un "délire", une phrase culte qui se propage de personne à personne en ètant et/ou détourné.</p>
+  <p>Mais pour être compris, le mème a besoin de son contexte et de la culture qui l'accompagne.</p>
+  <p>Sur notre site vous allez pouvoir créer vos propres mémes grace à notre générateur et notre bases des photos drôle qu'on vous propose.</p>
+</div>
+<div class="my_memes">
+  <h3>Dérniers mèmes créée: </h3>
+  {% for data in listing %}
+    <a target="_blank" href="{{ baseUrl('media/') }}{{ data.path }}.jpg">
+      <img class="memes"  src="{{ baseUrl('uploads/') }}{{ data.path }}.jpg" alt="list memes" > 
+    </a>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block js %}
+  {{ baseUrl('assets/js/listing.js') }}
+{% endblock %}

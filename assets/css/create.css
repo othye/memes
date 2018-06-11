@@ -1,0 +1,199 @@
+body{
+  background: url(../img/background.jpg);
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 85%
+}
+
+.carousel {
+  height: 200px;
+  margin-top: 35px
+}
+
+.user-choice {
+  position: relative;
+  width: 512px;
+  height: 384px
+}
+
+.user-choice > img {
+  width: 512px;
+  height: 384px
+}
+
+#p-up-text, #p-down-text {
+  overflow-y: hidden;
+  overflow-wrap: break-word;
+  position: absolute;
+  width: 100%;
+  max-height: 100px;
+  margin: 0;
+  padding: 0 32px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#p-up-text {
+  top: 2%
+}
+
+#p-down-text {
+  bottom: 2%
+}
+
+input[type="color"] {
+  background: none;
+  border: none;
+}
+
+.input-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-field > label {
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px)
+}
+
+.input-field > .label-color {
+  position: relative;
+  margin-right: 5%;
+  left: 0;
+}
+
+.input-field.col label {
+  left: 0;
+}
+
+form > .row {
+  margin-bottom: 0;
+}
+
+.btn {
+  margin-top: 2%;
+}
+
+.row .col {
+  padding: 0
+}
+
+.nav-wrapper > ul > li > a {
+  font-size: 20px;
+  color: #206DCB;
+}
+
+.modal{
+  padding: 1.3%;
+  width: 30%;
+  height: 70%;
+}
+
+a.mt-share-inline-square-bw-sm img {
+  width: 34px;
+  height: 34px;
+}
+
+.mt-twitter:hover {
+  background-color: rgb(0, 172, 238);
+}
+
+.mt-facebook:hover {
+  background-color: rgb(59, 89, 152);
+}
+
+.mt-pinterest:hover {
+  background-color: rgb(221, 42, 48);
+}
+
+.mt-google:hover {
+  background-color: rgb(225, 95, 79);
+}
+
+a.mt-share-inline-square-bw-sm {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+  margin-right: 4px;
+  text-align: center;
+  background-color: rgb(51, 51, 51);
+  transition: background-color 300ms ease-in 0s;
+}
+
+.modal-image{
+  width: 100%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59), -2px -2px 5px rgba(0, 0, 0, 0.59);
+}
+
+.meme-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-modal {
+  margin-bottom: 32px;
+  font-family: monospace;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+
+#logo{
+  width: 100px;
+}
+
+#logo{
+  width: 100px;
+}
+
+.mm-logo{
+  font-size: 20px;
+  color: black;
+  float: left;
+}
+
+#spanlogo{
+  color: #206DCB;
+}
+
+.card{
+  padding: 50px;
+}
+
+.nav-wrapper > ul > li > a:hover{
+  color: rgb(7, 66, 138) ;
+}
+
+@media screen and (max-width: 992px)
+{
+    .mm-logo{
+        float: right;
+    }
+    .content{
+      display: block;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    body{
+        margin: 0 auto;
+    }
+      
+    .mm-logo{
+        float: right;
+        font-size:12px;
+    }
+    #logo{
+        width: 80px;
+        margin-top: 5px;
+    }
+}

@@ -1,0 +1,73 @@
+
+a.mt-share-inline-square-bw-sm img {
+    width: 34px;
+    height: 34px;
+}
+
+.mt-twitter:hover {
+    background-color: rgb(0, 172, 238);
+}
+
+.mt-facebook:hover {
+    background-color: rgb(59, 89, 152);
+}
+.mt-pinterest:hover {
+    background-color: rgb(221, 42, 48);
+}
+
+.mt-google:hover {
+    background-color: rgb(225, 95, 79);
+}
+
+a.mt-share-inline-square-bw-sm {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border-radius: 2px;
+    margin-right: 4px;
+    text-align: center;
+    background-color: rgb(51, 51, 51);
+    transition: background-color 300ms ease-in 0s;
+}
+
+.resize {
+    margin-top: 5%;
+    width: 45%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59), -2px -2px 5px rgba(0, 0, 0, 0.59);
+}
+
+
+.container {
+    width: 85%;
+}
+
+.nav-wrapper > ul > li > a{
+    font-size: 20px;
+}
+
+body{
+    background: url(../img/background.jpg);
+  }
+  
+
+.nav-wrapper > ul > li > a{
+    font-size: 20px;
+    color: #206DCB;
+}
+
+.nav-wrapper > ul > li > a:hover{
+    color: rgb(7, 66, 138) ;
+}
+
+#logo{
+    width: 100px;
+}
+
+.mm-logo{
+    font-size: 20px;
+    color: black;
+}
+
+#spanlogo{
+    color: #206DCB;
+}

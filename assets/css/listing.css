@@ -1,0 +1,78 @@
+body{
+    background: url(../img/background.jpg);
+}
+  
+
+.nav-wrapper > ul > li > a{
+    font-size: 20px;
+    color: #206DCB;
+}
+
+.nav-wrapper > ul > li > a:hover{
+    color: rgb(7, 66, 138) ;
+}
+
+#logo{
+    width: 100px;
+}
+
+.mm-logo{
+    font-size: 20px;
+    color: black;
+    float: left;
+}
+
+#spanlogo{
+    color: #206DCB;
+}
+
+.memes {
+    width: 30%;
+    margin:15px 10px;
+    transition: transform .2s
+}
+
+.memes:hover {
+    transform: scale(1.2); 
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+}
+p{
+    font-size: 20px;
+}
+@media screen and (max-width: 992px)
+{
+    .mm-logo{
+        float: right;
+    }
+    .memes {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    body{
+        margin: 0 auto;
+    }
+      
+    .mm-logo{
+        float: right;
+        font-size:12px;
+    }
+    #logo{
+        width: 80px;
+        margin-top: 5px;
+    }
+    p{
+        font-size: 15px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    .memes {
+        width: 45%;
+        float: center;
+    }
+}
+
