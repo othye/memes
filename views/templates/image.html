@@ -1,0 +1,7 @@
+
+<!-- CAROUSEL -->
+<div class="carousel">
+    {% for base in data %}
+        <a class="carousel-item"><img src="{{ baseUrl('assets/images/') }}{{ base.path }}.jpg"></a>
+    {% endfor %}
+</div>

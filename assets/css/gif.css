@@ -1,12 +1,31 @@
+@font-face {
+    font-family: 'Impact';
+    src: url('../fonts/impact.ttf')
+}
+
+@font-face {
+  font-family: 'Righteous';
+  src: url('../fonts/Righteous-Regular.ttf')
+}
+
 body{
   background: url(../img/background.jpg);
   font-family: 'Roboto', sans-serif;
 }
 
-.container {
-  width: 85%
+nav{
+  background-color: #f6f6f8
 }
 
+.container {
+    width: 85%
+}
+  
+.gif {
+    height: 200px;
+    margin-top: 35px
+}
+  
 .carousel {
   height: 200px;
   margin-top: 35px
@@ -37,7 +56,7 @@ body{
 
 #p-up-text {
   top: 2%
-}
+} 
 
 #p-down-text {
   bottom: 2%
@@ -56,7 +75,7 @@ input[type="color"] {
 
 .input-field > label {
   -webkit-transform: translateY(0px);
-  transform: translateY(0px)
+  transform: translateY(0px);
 }
 
 .input-field > .label-color {
@@ -83,7 +102,7 @@ form > .row {
 
 .nav-wrapper > ul > li > a {
   font-size: 20px;
-  color: #206DCB;
+  color: #b71d5b;
 }
 
 .modal{
@@ -148,20 +167,30 @@ a.mt-share-inline-square-bw-sm {
 
 #logo{
   width: 100px;
+  transition: transform .2s;
 }
 
-#logo{
-  width: 100px;
+#logo:hover{
+  transform: scale(1.1);
 }
 
 .mm-logo{
-  font-size: 20px;
+  font-family: 'Righteous', cursive;
+  font-size: 30px;
   color: black;
   float: left;
 }
 
 #spanlogo{
-  color: #206DCB;
+  color: #b71d5b;
+}
+
+.btn{
+  background: #b71d5b;
+}
+
+.btn:hover{
+  background: #b84d78;
 }
 
 .card{
@@ -169,7 +198,26 @@ a.mt-share-inline-square-bw-sm {
 }
 
 .nav-wrapper > ul > li > a:hover{
-  color: rgb(7, 66, 138) ;
+  color: #b84d78 ;
+}
+
+#mob-menu{
+  width: 80%;
+  margin-top: 10px;
+}
+
+input, .search{
+  text-align: center;
+}
+
+.page-footer{
+  background-color: #b71d5b;
+  color: black;
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
+  font-weight: bold;
+  position: absolute;
 }
 
 @media screen and (max-width: 992px)
@@ -178,22 +226,19 @@ a.mt-share-inline-square-bw-sm {
         float: right;
     }
     .content{
-      display: block;
+        display: block;
+    } 
+    .user-choice {
+        width: 100%;
+        height: auto;
     }
-}
-
-@media screen and (max-width: 500px)
-{
-    body{
-        margin: 0 auto;
+    
+    .user-choice > img {
+        width: 100%;
+        height: auto;
     }
-      
-    .mm-logo{
-        float: right;
-        font-size:12px;
+    .disappear{
+    display: none;
     }
-    #logo{
-        width: 80px;
-        margin-top: 5px;
-    }
+     
 }

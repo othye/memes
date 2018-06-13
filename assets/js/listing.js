@@ -1,11 +1,11 @@
-/* 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.materialboxed');
-  var instances = M.Materialbox.init(elems);
-}); */
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal1');
-    var instances = M.Modal.init(elems);
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const   modal        = document.querySelectorAll('.modal')
+        , initModal    = M.Modal.init(modal)
+        , dropdown     = document.querySelectorAll('.dropdown-trigger')
+        , initDropdown = M.Dropdown.init(dropdown)
+        , sidenav      = document.querySelectorAll('.sidenav')
+        , initSidenav  = M.Sidenav.init(sidenav)
+        , select       = document.querySelectorAll('select')
+        , instances    = M.FormSelect.init(select)
+})

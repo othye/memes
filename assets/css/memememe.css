@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Righteous';
+    src: url('../fonts/Righteous-Regular.ttf')
+}
+
+body{
+    background: url(../img/background.jpg);
+    font-family: 'Roboto', sans-serif;
+}
 
 a.mt-share-inline-square-bw-sm img {
     width: 34px;
@@ -41,33 +50,142 @@ a.mt-share-inline-square-bw-sm {
     width: 85%;
 }
 
-.nav-wrapper > ul > li > a{
+.nav-wrapper > ul > li > a {
     font-size: 20px;
+    color: #b71d5b;
+  }
+
+.nav-wrapper > ul > li > a:hover{
+    color: #b84d78;
 }
 
 body{
     background: url(../img/background.jpg);
   }
   
-
-.nav-wrapper > ul > li > a{
-    font-size: 20px;
-    color: #206DCB;
+nav{
+    background-color: #f6f6f8
 }
 
-.nav-wrapper > ul > li > a:hover{
-    color: rgb(7, 66, 138) ;
-}
+
 
 #logo{
     width: 100px;
+    transition: transform .2s
+}
+
+#logo:hover{
+    transform: scale(1.1);
 }
 
 .mm-logo{
-    font-size: 20px;
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
     color: black;
+    float: left;
 }
 
 #spanlogo{
-    color: #206DCB;
+    color: #b71d5b;
+}
+
+.btn{
+    background: #b71d5b;
+}
+
+.btn:hover{
+    background: #b84d78;
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 992px)
+{
+    .mm-logo{
+        float: right;
+    }
+    .content{
+        display: block;
+    } 
+    .user-choice {
+        width: 100%;
+        height: auto;
+    }
+    
+    .user-choice > img {
+        width: 100%;
+        height: auto;
+    }
+    .disappear{
+    display: none;
+    }
+     
+}
+
+
+/* Just to play with animations */
+.copiedtext {
+    position: absolute;
+    left: 0; top: 0; right: 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-1em);
+    color: #000;
+    transition: all 0.5s;
+    font-size: 1.2em;
+  }
+  .copied .copiedtext {
+    opacity: 1;
+    transform: translateY(-1.5em);
+  }
+  
+  /* Some Generic styles */
+  textarea,
+  button {
+    font-size: 1em;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  }
+  textarea {
+    display: block;
+    text-align: center;
+    width: 40%;
+    height: auto;
+    margin: 2em auto 1.5em;
+    background: #F2F2F6;
+    border: 1px solid #ddd;
+    padding-top: 2%;
+  }
+  [id="cleared"] {
+    margin-top: 4em;
+  }
+  textarea:focus {
+    border-color: #b71d5b;
+  }
+  button {
+    position: relative;
+    padding: 8px 20px;
+    border: 0;
+    font-size: 0.835em;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    font-weight: bold;
+    color: #FFF;
+    background: #b71d5b;
+    transition: background .275s;
+  }
+  button:hover,
+  button:focus {
+    background: #b84d78;
+  }
+  
+.page-footer{
+    background-color: #b71d5b;
+    color: black;
+    height: auto;
+    width: 100%;
+    font-weight: bold;
+    position: absolute;
 }

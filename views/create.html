@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 
 {% block css %}
-{{ baseUrl('assets/css/create.css') }}
+    {{ baseUrl('assets/css/' ~ template ~ '.css') }}
 {% endblock %}
 
 {% block content %}
@@ -10,21 +10,17 @@
 
 <div class="row">
 
-     <!-- CAROUSEL -->
-    <div class="carousel">
-        {% for base in data %}
-        <a class="carousel-item"><img src="{{ baseUrl('assets/images/') }}{{ base.path }}.jpg"></a>
-        {% endfor %}
-    </div>
 
     <div class="content col s12 m12">
-    
+
+        {% include 'templates/' ~ template ~ '.html' with data %}
+        
         <form>  
             <div class="left col s12 m12 l3">
                 <div class="card row">
                     <div class="input-field col s12">
-                        <input id="up-text" type="text" name="texteH" class="validate">
-                        <label for="up-text">Texte du haut</label>
+                        <input id="input-up-text" type="text" name="texteH" class="validate">
+                        <label for="input-up-text">Texte du haut</label>
                     </div>
                     
                     <div>
@@ -35,29 +31,38 @@
                         </div>
                         
                         <div class="input-field col s12">
-                            <label class="label-color" >Taille du texte</label>
                             <select id="up-size-text" name="sizeH">
-                                <option value="22" disabled >Taille du texte</option>
-                                <option value="24" selected>24px</option>
-                                <option value="28">28px</option>
-                                <option value="32">32px</option>
-                                <option value="36">36px</option>
-                                <option value="40">40px</option>
+                                <option value="44" disabled selected>Taille</option>
                                 <option value="44">44px</option>
                                 <option value="48">48px</option>
-                                <option value="50">50px</option>
+                                <option value="52">52px</option>
+                                <option value="56">56px</option>
+                                <option value="60">60px</option>
+                                <option value="64">64px</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- USER CHOICE -->
+            <center>
+                    <div  id="custom_image" class="col s12 m12 l6 ">
+                        <div class="user-choice">
+                            <img id="user-choice" src="{{ baseUrl('assets/images/') }}create.jpg">
+                            <p id="p-up-text"></p>
+                            <p id="p-down-text"></p>
+                        </div>
+                    </div>
+                </center>
+                
            
             <!-- FORM -->
-            <div class="right col s12 m12 l3">
+            <div id="text_down" class="right col s12 m12 l3">
                 <div class="card row ">
                     <div class="input-field col s12">
-                        <input id="down-text" type="text" name="texteB" class="validate">
-                        <label for="down-text">Texte du bas</label>
+                        <input id="input-down-text" type="text" name="texteB" class="validate">
+                        <label for="input-down-text">Texte du bas</label>
                     </div>
                     
                     <div>
@@ -68,36 +73,22 @@
                         </div>
                         
                         <div class="input-field col s12">
-                            <label class="label-color" >Taille du texte</label>
                             <select id="down-size-text" name="sizeB">
-                                <option  disabled >Taille du texte</option>
-                                <option value="24" selected>24px</option>
-                                <option value="28">28px</option>
-                                <option value="32">32px</option>
-                                <option value="36">36px</option>
-                                <option value="40">40px</option>
+                                <option value="44" disabled selected>Taille</option>
                                 <option value="44">44px</option>
                                 <option value="48">48px</option>
-                                <option value="50">50px</option>
+                                <option value="52">52px</option>
+                                <option value="56">56px</option>
+                                <option value="60">60px</option>
+                                <option value="64">64px</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
-             <!-- USER CHOICE -->
-             <center>
-                    <div class="col s12 m12 l6 ">
-                        <div class="user-choice">
-                            <img id="user-choice" src="{{ baseUrl('assets/images/') }}create.jpg">
-                            <input id="input-image" type="hidden" name="image" value="{{ baseUrl('assets/images/') }}create.jpg">
-                            <p id="p-up-text"></p>
-                            <p id="p-down-text"></p>
-                        </div>
-                    </div>
-                </center>
-                
+             
             
-            <div class="col s12"><center><button data-target="modal" class="btn modal-trigger waves-effect waves-light blue darken-">Générer MeMe</button></center></div>
+            <div class="col s12"><center><button data-target="modal" class="btn modal-trigger waves-effect waves-light">Générer Meme</button></center></div>
 
             
         </form>
@@ -107,5 +98,5 @@
 {% endblock %}
 
 {% block js %}
-{{ baseUrl('assets/js/create.js') }}
+    {{ baseUrl('assets/js/' ~ template ~ '.js') }}
 {% endblock %}

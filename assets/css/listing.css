@@ -1,35 +1,63 @@
+@font-face {
+    font-family: 'Righteous';
+    src: url('../fonts/Righteous-Regular.ttf')
+}
+
+
 body{
     background: url(../img/background.jpg);
+    height: 100%;
 }
-  
 
-.nav-wrapper > ul > li > a{
+
+
+.nav-wrapper > ul > li > a {
     font-size: 20px;
-    color: #206DCB;
-}
+    color: #b71d5b;
+  }
 
 .nav-wrapper > ul > li > a:hover{
-    color: rgb(7, 66, 138) ;
+    color: #b84d78;
 }
+
+nav{
+    background-color: #f6f6f8;
+}
+
+.page-footer{
+    background-color: #b71d5b;
+    color: black;
+    height: auto;
+    font-size: 15px;
+    width: 100%;
+    font-weight: bold;
+  }
 
 #logo{
     width: 100px;
+    transition: transform .2s
+}
+
+#logo:hover{
+    transform: scale(1.1);
 }
 
 .mm-logo{
-    font-size: 20px;
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
     color: black;
     float: left;
 }
 
 #spanlogo{
-    color: #206DCB;
+    color: #b71d5b;
 }
 
 .memes {
     width: 30%;
     margin:15px 10px;
-    transition: transform .2s
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59), -2px -2px 5px rgba(0, 0, 0, 0.59);
+    transition: transform .2s;
 }
 
 .memes:hover {
@@ -38,27 +66,46 @@ body{
     -webkit-transform: scale(1.2); /* Safari 3-8 */
 }
 p{
-    font-size: 20px;
+    font-size: 15px;
 }
+
+#mob-menu{
+    width: 80%;
+    margin-top: 10px;
+}
+
+
+.btn{
+    background: #b71d5b;
+}
+
+.btn:hover{
+    background: #b84d78;
+}
+
+
 @media screen and (max-width: 992px)
 {
     .mm-logo{
         float: right;
     }
     .memes {
-        width: 30%;
+        width: 45%;
     }
 }
+
+
 
 @media screen and (max-width: 500px)
 {
     body{
         margin: 0 auto;
+ 
     }
       
     .mm-logo{
         float: right;
-        font-size:12px;
+        font-size:15px;
     }
     #logo{
         width: 80px;
@@ -71,8 +118,39 @@ p{
         font-size: 18px;
     }
     .memes {
-        width: 45%;
+        width: 90%;
         float: center;
+    }
+    .page-footer{
+        font-size: 10px;
     }
 }
 
+@media screen and (max-width: 990px) {
+
+    nav > .container{
+      width: 100%;
+    }
+  
+    .disappear{
+      display: none;
+    }
+    .page-footer{
+        font-size: 14px;
+    }
+  
+  }
+  
+  @media screen and (min-width: 990px) {
+  
+    #mobile-demo{
+      display:none;
+    }
+  
+    .sidenav-overlay{
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0);
+      z-index: -9;
+    }
+    
+  }
